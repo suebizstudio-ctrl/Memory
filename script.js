@@ -1,49 +1,49 @@
-const CORRECT_PASSWORD = "1234";   // 🔒 ตั้งรหัสตรงนี้
+/* ===== ELEMENTS ===== */
+const passwordInput = document.getElementById("password");
+const buttons = document.querySelectorAll(".num");
+const delBtn = document.querySelector(".delete");
+const enterBtn = document.querySelector(".enter");
+const card = document.querySelector(".lock-card");
 
-const input = document.getElementById("password");
-const nums = document.querySelectorAll(".num");
-const del = document.querySelector(".delete");
-const enter = document.querySelector(".enter");
-
+/* ===== STATE ===== */
 let value = "";
+const CORRECT_PASSWORD = "1234"; // 🔐 เปลี่ยนรหัสตรงนี้
 
-/* กดตัวเลข */
-nums.forEach(btn => {
+/* ===== INPUT NUMBER ===== */
+buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     if (value.length < 6) {
       value += btn.textContent;
-      input.value = "•".repeat(value.length);
+      passwordInput.value = "•".repeat(value.length);
     }
   });
 });
 
-/* ลบ */
-del.addEventListener("click", () => {
+/* ===== DELETE ===== */
+delBtn.addEventListener("click", () => {
   value = value.slice(0, -1);
-  input.value = "•".repeat(value.length);
+  passwordInput.value = "•".repeat(value.length);
 });
 
-/* ยืนยัน */
-enter.addEventListener("click", () => {
+/* ===== ENTER ===== */
+enterBtn.addEventListener("click", () => {
   if (value === CORRECT_PASSWORD) {
-
-    // เอฟเฟคผ่าน
-    document.querySelector(".lock-card").classList.add("success");
+    // ✅ ถูก → แตกแสง
+    card.classList.add("success");
 
     setTimeout(() => {
-      window.location.href = "page2.html"; // 👉 หน้าถัดไป
+      window.location.href = "page2.html";
     }, 900);
 
   } else {
-
-    // เอฟเฟคผิด
-    document.querySelector(".lock-card").classList.add("error");
+    // ❌ ผิด → สั่น
+    card.classList.add("shake");
 
     setTimeout(() => {
-      document.querySelector(".lock-card").classList.remove("error");
-      value = "";
-      input.value = "";
-    }, 600);
+      card.classList.remove("shake");
+    }, 500);
 
+    value = "";
+    passwordInput.value = "";
   }
 });
