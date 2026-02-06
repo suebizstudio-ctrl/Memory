@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine’s Day 💗</title>
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-card">
+    <h1>Happy Valentine’s Day</h1>
+    <p>Every moment with you is a memory I cherish.</p>
+    <div class="loader-heart">❤</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div id="content" class="hidden">
+
+  <!-- floating hearts -->
+  <div class="hearts">
+    <span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <span class="hero-tag">For My Love</span>
+    <h1>Happy Valentine’s Day</h1>
+    <p>A little corner of love, made just for you.</p>
+  </div>
+
+  <div class="hero-scroll">↓ scroll</div>
+</section>
+
+
+  <!-- MEMORIES -->
+  <!-- MEMORIES -->
+<section class="memories">
+  <h2>Our Memories</h2>
+  <p class="memories-sub">
+    Moments that slowly became everything.
+  </p>
+
+  <div class="memories-wrap">
+
+    <!-- main memory -->
+    <div class="memory-main">
+      <img src="img/34bfa3eadb7fc2ca572935320a9718ee.jpg">
+      <div class="memory-text">
+        <span>Our beginning</span>
+        When love felt simple and warm.
+      </div>
+    </div>
+
+    <!-- side memories -->
+    <div class="memory-side">
+      <figure>
+        <img src="img/a3a6080e070e477dbd836d0ca672cfbf.jpg">
+        <figcaption>Soft smiles I still remember</figcaption>
+      </figure>
+
+      <figure>
+        <img src="img/e158e901e57bda604b63367bf24b00e0.jpg">
+        <figcaption>Quiet moments, loud feelings</figcaption>
+      </figure>
+
+      <figure>
+        <img src="img/725984e2d72e6fccfc5ac0d1982f21ea.jpg">
+        <figcaption>Love in the smallest things</figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <h2>Our Story</h2>
+
+    <div class="timeline-card">
+      <span class="date">14 Feb 2022</span>
+      <p>The day we met, without knowing how everything would change.</p>
+    </div>
+
+    <div class="timeline-card">
+      <span class="date">20 Feb 2022</span>
+      <p>The first conversation that lasted longer than expected.</p>
+    </div>
+
+    <div class="timeline-card">
+      <span class="date">1 Mar 2022</span>
+      <p>The day we chose each other.</p>
+    </div>
+
+    <div class="timeline-card">
+      <span class="date">18 Aug 2022</span>
+      <p>We argued, we cried — but we never walked away.</p>
+    </div>
+  </section>
+
+  <!-- SONG -->
+  <section class="song">
+    <h2>Our Song</h2>
+    <div class="music-card">
+      <iframe src="https://www.youtube.com/embed/PUT_REAL_VIDEO_ID" allowfullscreen></iframe>
+      <p class="song-memory">
+        This song reminds me of every quiet moment we shared.<br>
+        The first time we listened to it — I knew this was us.
+      </p>
+    </div>
+  </section>
+
+  <!-- PHOTO + CAPTION -->
+  <section class="memories">
+    <h2>Little Moments</h2>
+    <div class="memory-grid">
+      <figure>
+        <img src="img/213616e4c3caff19cec83f45e65d4e6a.jpg">
+        <figcaption>
+          <span>12 Jan 2022</span>
+          The day you smiled, and everything changed.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="img/6e9f4e52cf04d0218d607f2a5751497a.jpg">
+        <figcaption>
+          <span>3 Mar 2022</span>
+          A quiet moment I wish I could relive forever.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="letter-section">
+    <h2>Love Letter</h2>
+    <div class="envelope" id="openLetter">
+      <div class="flap"></div>
+      <div class="body"></div>
+    </div>
+  </section>
+
+  <!-- LETTER MODAL -->
+  <div class="letter-modal" id="letterModal">
+    <div class="letter-paper">
+      <h3>My Love,</h3>
+      <p class="impact">
+        If I had to choose one place in this world to stay forever…
+        it would be right here, with you.
+      </p>
+
+      <p>
+        Every moment with you feels gentle and rare.
+        This space exists simply to remind you of how deeply you are cherished.
+      </p>
+
+      <p class="ending">
+        With all my love,<br>
+        Now and always,<br>
+        <strong>Yours faithfully.</strong>
+      </p>
+
+      <button onclick="closeLetter()">Close</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="page2.js"></script>
+</body>
+</html>
