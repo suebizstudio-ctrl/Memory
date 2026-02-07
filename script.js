@@ -4,13 +4,12 @@ const buttons = document.querySelectorAll(".num");
 const delBtn = document.querySelector(".delete");
 const enterBtn = document.querySelector(".enter");
 const card = document.querySelector(".lock-card");
-card.classList.add("success");
 
 /* ===== STATE ===== */
 let value = "";
 const CORRECT_PASSWORD = "1234"; // 🔐 เปลี่ยนรหัสตรงนี้
 
-/* ===== INPUT NUMBER ===== */
+/* ===== INPUT ===== */
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     if (value.length < 6) {
@@ -29,15 +28,12 @@ delBtn.addEventListener("click", () => {
 /* ===== ENTER ===== */
 enterBtn.addEventListener("click", () => {
   if (value === CORRECT_PASSWORD) {
-    // ✅ ถูก → แตกแสง
     card.classList.add("success");
 
     setTimeout(() => {
       window.location.href = "page2.html";
     }, 900);
-
   } else {
-    // ❌ ผิด → สั่น
     card.classList.add("shake");
 
     setTimeout(() => {
@@ -48,4 +44,3 @@ enterBtn.addEventListener("click", () => {
     passwordInput.value = "";
   }
 });
-
