@@ -4,6 +4,7 @@ const buttons = document.querySelectorAll(".num");
 const delBtn = document.querySelector(".delete");
 const enterBtn = document.querySelector(".enter");
 const card = document.querySelector(".lock-card");
+card.classList.add("success");
 
 /* ===== STATE ===== */
 let value = "";
@@ -47,3 +48,4 @@ enterBtn.addEventListener("click", () => {
     passwordInput.value = "";
   }
 });
+
