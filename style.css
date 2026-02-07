@@ -206,3 +206,121 @@ body {
       0 0 120px rgba(190,255,230,.8);
   }
 }
+/* =====================
+   RESPONSIVE FIX – ALL DEVICES
+===================== */
+
+/* ป้องกันการ์ดใหญ่เกินจอ */
+.lock-card {
+  max-width: min(92vw, 420px);
+}
+
+/* =====================
+   SMALL PHONE (iPhone SE / Android เล็ก)
+===================== */
+@media (max-width: 380px) {
+
+  .photo-frame {
+    width: 130px;
+    height: 130px;
+  }
+
+  .photo-caption {
+    font-size: 13px;
+  }
+
+  .password-box input {
+    font-size: 16px;
+    letter-spacing: 5px;
+    padding: 12px;
+  }
+
+  .keypad {
+    gap: 12px;
+  }
+
+  .keypad .num {
+    font-size: 18px;
+    border-radius: 22px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .delete {
+    width: 46px;
+    height: 46px;
+    align-self: center;
+  }
+}
+
+/* =====================
+   NORMAL PHONE
+===================== */
+@media (max-width: 480px) {
+
+  .lock-wrapper {
+    padding: 16px;
+  }
+
+  .lock-card {
+    padding: 24px;
+    gap: 22px;
+  }
+
+  .photo-frame {
+    width: 150px;
+    height: 150px;
+  }
+
+  .keypad .num {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* =====================
+   TABLET
+===================== */
+@media (min-width: 768px) {
+
+  .lock-card {
+    max-width: 460px;
+  }
+
+  .photo-frame {
+    width: 180px;
+    height: 180px;
+  }
+
+  .keypad .num {
+    font-size: 22px;
+  }
+}
+
+/* =====================
+   LARGE SCREEN
+===================== */
+@media (min-width: 1200px) {
+
+  .lock-wrapper {
+    padding: 40px;
+  }
+
+  .lock-card {
+    transform: scale(1.03);
+  }
+}
+
+/* =====================
+   SAFETY: ห้ามปุ่มล้น
+===================== */
+.keypad {
+  width: 100%;
+}
+
+.keypad .num {
+  min-width: 0;
+}
+
+
