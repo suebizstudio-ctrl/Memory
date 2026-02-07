@@ -50,8 +50,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  max-height: 92dvh;
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
 }
 
 /* ===== PHOTO ===== */
@@ -192,3 +192,66 @@ body {
   .photo-frame { width: 110px; }
   .num { border-radius: 18px; font-size: 18px; }
 }
+/* ===== DESKTOP IMPROVEMENT ===== */
+@media (min-width: 1024px) {
+
+  body {
+    align-items: center;
+  }
+
+  .lock-wrapper {
+    max-width: 520px;
+  }
+
+  .lock-card {
+    padding: 32px 36px;
+    gap: 18px;
+    border-radius: 36px;
+  }
+
+  /* รูปเล็กลงนิด */
+  .photo-frame {
+    width: 120px;
+  }
+
+  /* ช่องรหัสไม่ยาวเกิน */
+  .password-box input {
+    height: 42px;
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+
+  /* keypad ดูเป็น desktop */
+  .keypad {
+    max-width: 340px;
+    gap: 14px;
+  }
+
+  .num {
+    aspect-ratio: unset;
+    height: 62px;
+    border-radius: 18px;
+    font-size: 18px;
+  }
+
+  /* ปุ่มล่าง */
+  .enter {
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .delete {
+    width: 46px;
+    height: 46px;
+  }
+}
+@media (min-width: 1024px) {
+  .lock-card {
+    background:
+      linear-gradient(180deg,
+        rgba(255,255,255,.85),
+        rgba(255,245,250,.85)
+      );
+  }
+}
+
