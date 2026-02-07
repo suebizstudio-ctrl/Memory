@@ -7,102 +7,95 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Cormorant Garamond', serif;
-  min-height: 100dvh;
-  background:
-    radial-gradient(circle at top, #fff1f7, transparent 60%),
-    linear-gradient(180deg, #fff7fb, #f2fff9);
-  color: #6b3a4a;
-  overflow-x: hidden;
+  background: linear-gradient(180deg,#fff0f6,#f7fff9);
+  color: #5a2d3c;
+  overflow: hidden;
 }
 
 /* =====================
-   FLOATING DECOR
+   FLOATING BACKGROUND
 ===================== */
 .bg-float span {
   position: fixed;
-  bottom: -30px;
+  bottom: -20px;
+  opacity: .25;
+  animation: float 16s linear infinite;
   font-size: 18px;
-  opacity: .35;
-  animation: floatUp 16s linear infinite;
-  z-index: 0;
 }
 
-.bg-float span:nth-child(1){left:12%;animation-delay:0s}
-.bg-float span:nth-child(2){left:32%;animation-delay:5s}
-.bg-float span:nth-child(3){left:58%;animation-delay:9s}
-.bg-float span:nth-child(4){left:82%;animation-delay:13s}
+.bg-float span:nth-child(1){left:10%}
+.bg-float span:nth-child(2){left:30%;animation-delay:3s}
+.bg-float span:nth-child(3){left:60%;animation-delay:6s}
+.bg-float span:nth-child(4){left:85%;animation-delay:9s}
 
-@keyframes floatUp {
-  to { transform: translateY(-130vh); }
+@keyframes float {
+  to { transform: translateY(-120vh); }
 }
 
 /* =====================
-   CENTER
+   LAYOUT
 ===================== */
 .lock-wrapper {
   min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(16px, 4vw, 32px);
-  position: relative;
-  z-index: 1;
+  padding: clamp(12px, 3vh, 28px);
 }
 
-/* =====================
-   CARD (เหมือนถาดขนม)
-===================== */
 .lock-card {
   width: 100%;
-  max-width: 420px;
-  padding: clamp(24px, 4vw, 36px);
-  border-radius: 40px;
-  background: #fffdfd;
+  max-width: 380px;
+  max-height: 92dvh;
+  overflow: hidden;
+  background: rgba(255,255,255,.9);
+  border-radius: 36px;
+  padding: 26px 22px 22px;
   box-shadow:
-    0 35px 80px rgba(255, 170, 200, .45),
-    inset 0 0 0 2px #fff3f8;
+    0 30px 70px rgba(255,170,200,.35),
+    inset 0 0 0 1px rgba(255,200,220,.6);
   display: flex;
   flex-direction: column;
-  gap: 26px;
-  position: relative;
+  align-items: center;
+  gap: 18px;
 }
 
 /* =====================
-   PHOTO (เหมือนคัพเค้ก)
+   PHOTO
 ===================== */
 .photo-frame {
-  width: 170px;
-  height: 170px;
-  margin: 0 auto;
+  width: clamp(120px, 28vw, 150px);
+  aspect-ratio: 1;
   border-radius: 50%;
-  padding: 8px;
-  background:
-    linear-gradient(135deg, #ffb7d5, #bff1db);
-  box-shadow: 0 20px 45px rgba(255,170,200,.45);
+  padding: 5px;
+  background: linear-gradient(135deg,#ffb6d9,#b8f2d6);
 }
 
 .photo-frame img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
-  background: #fff;
+  border-radius: 50%;
 }
 
 .photo-caption {
-  text-align: center;
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 14px;
   font-style: italic;
-  color: #9a5a6a;
+  opacity: .7;
 }
 
 /* =====================
    PASSWORD
 ===================== */
 .password-box {
+  width: 100%;
   text-align: center;
 }
 
@@ -112,52 +105,47 @@ body {
   border-radius: 999px;
   border: none;
   background: #fff;
-  text-align: center;
-  font-size: 18px;
+  box-shadow: inset 0 0 0 1px #ffd6e6;
+  font-size: 16px;
   letter-spacing: 6px;
-  box-shadow:
-    inset 0 0 0 2px #ffe1ec,
-    0 10px 25px rgba(255,180,210,.35);
 }
 
 .hint {
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 6px;
+  font-size: 13px;
   opacity: .6;
 }
 
 /* =====================
-   KEYPAD (มาการอง)
+   KEYPAD
 ===================== */
 .keypad {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(12px, 3vw, 18px);
+  grid-template-columns: repeat(3,1fr);
+  gap: clamp(10px, 2vw, 16px);
 }
 
-.keypad .num {
-  aspect-ratio: 1 / 1;
-  border-radius: 26px;
+.num {
+  aspect-ratio: 1;
+  border-radius: 22px;
   border: none;
-  font-size: 20px;
-  font-family: 'Playfair Display', serif;
-  color: #7a3d4f;
-  background:
-    linear-gradient(180deg, #ffffff, #ffeef5);
+  background: rgba(255,255,255,.85);
   box-shadow:
-    0 14px 28px rgba(255,160,200,.35),
-    inset 0 -4px 0 rgba(255,190,215,.8);
-  transition: .2s ease;
+    0 10px 25px rgba(255,170,200,.25),
+    inset 0 0 0 1px rgba(255,200,220,.6);
+  font-size: clamp(16px, 4vw, 20px);
+  color: #7a2e4a;
+  cursor: pointer;
+  transition: .25s;
 }
 
-.keypad .num:active {
-  transform: translateY(2px);
-  box-shadow:
-    0 6px 16px rgba(255,160,200,.25),
-    inset 0 -2px 0 rgba(255,190,215,.6);
+.num:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(255,160,210,.45);
 }
 
-.keypad .zero {
+.zero {
   grid-column: 2;
 }
 
@@ -165,162 +153,53 @@ body {
    ACTIONS
 ===================== */
 .actions {
+  width: 100%;
   display: flex;
-  gap: 14px;
+  gap: 12px;
+  align-items: center;
 }
 
 .enter {
   flex: 1;
-  padding: 16px;
   border-radius: 999px;
   border: none;
-  font-size: 15px;
-  font-family: 'Playfair Display', serif;
+  padding: 14px;
+  font-size: 14px;
   color: #fff;
-  background:
-    linear-gradient(90deg, #ff9fc8, #bff1db);
-  box-shadow: 0 18px 40px rgba(255,150,200,.45);
+  background: linear-gradient(135deg,#ff9ac7,#9fe6c3);
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(255,160,200,.45);
 }
 
 .delete {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: #fff;
-  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  cursor: pointer;
 }
 
 /* =====================
-   SUCCESS (น้ำตาลแตก ✨)
+   NOTEBOOK FIX
 ===================== */
-.lock-card.success {
-  animation: sugarPop .9s ease forwards;
-}
-
-@keyframes sugarPop {
-  50% {
-    transform: scale(1.03);
-    box-shadow:
-      0 0 60px rgba(255,190,220,.9),
-      0 0 120px rgba(190,255,230,.8);
-  }
-}
-/* =====================
-   RESPONSIVE FIX – ALL DEVICES
-===================== */
-
-/* ป้องกันการ์ดใหญ่เกินจอ */
-.lock-card {
-  max-width: min(92vw, 420px);
-}
-
-/* =====================
-   SMALL PHONE (iPhone SE / Android เล็ก)
-===================== */
-@media (max-width: 380px) {
-
-  .photo-frame {
-    width: 130px;
-    height: 130px;
-  }
-
-  .photo-caption {
-    font-size: 13px;
-  }
-
-  .password-box input {
-    font-size: 16px;
-    letter-spacing: 5px;
-    padding: 12px;
-  }
-
-  .keypad {
-    gap: 12px;
-  }
-
-  .keypad .num {
-    font-size: 18px;
-    border-radius: 22px;
-  }
-
-  .actions {
-    flex-direction: column;
-  }
-
-  .delete {
-    width: 46px;
-    height: 46px;
-    align-self: center;
-  }
-}
-
-/* =====================
-   NORMAL PHONE
-===================== */
-@media (max-width: 480px) {
-
-  .lock-wrapper {
-    padding: 16px;
-  }
-
+@media (max-height: 760px) {
   .lock-card {
-    padding: 24px;
-    gap: 22px;
+    gap: 14px;
+    padding: 20px;
   }
 
-  .photo-frame {
-    width: 150px;
-    height: 150px;
-  }
-
-  .keypad .num {
-    aspect-ratio: 1 / 1;
-  }
-}
-
-/* =====================
-   TABLET
-===================== */
-@media (min-width: 768px) {
-
-  .lock-card {
-    max-width: 460px;
-  }
-
-  .photo-frame {
-    width: 180px;
-    height: 180px;
-  }
-
-  .keypad .num {
-    font-size: 22px;
+  .num {
+    border-radius: 18px;
   }
 }
 
 /* =====================
    LARGE SCREEN
 ===================== */
-@media (min-width: 1200px) {
-
-  .lock-wrapper {
-    padding: 40px;
-  }
-
+@media (min-width: 1024px) {
   .lock-card {
-    transform: scale(1.03);
+    transform: scale(.96);
   }
 }
-
-/* =====================
-   SAFETY: ห้ามปุ่มล้น
-===================== */
-.keypad {
-  width: 100%;
-}
-
-.keypad .num {
-  min-width: 0;
-}
-
-
