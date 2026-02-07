@@ -1,71 +1,63 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory 💗</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory 💗</title>
 
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap"
-        rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- floating background -->
-    <div class="bg-float">
-        <span>✿</span><span>✦</span><span>✿</span><span>✦</span>
+  <!-- floating bg -->
+  <div class="bg-float">
+    <span>✿</span><span>✦</span><span>✿</span><span>✦</span>
+  </div>
+
+  <main class="lock-wrapper">
+
+    <div class="lock-card">
+
+      <!-- photo -->
+      <div class="photo-frame">
+        <img src="img/jancy.jpg" alt="memory">
+      </div>
+      <div class="photo-caption">Our beginning</div>
+
+      <!-- password -->
+      <div class="password-box">
+        <input id="password" type="password" readonly placeholder="••••">
+        <p class="hint">A date only we remember</p>
+      </div>
+
+      <!-- keypad -->
+      <div class="keypad">
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="num zero">0</button>
+      </div>
+
+      <!-- actions -->
+      <div class="actions">
+        <button class="enter">Unlock Memories</button>
+        <button class="delete">⌫</button>
+      </div>
+
     </div>
 
-    <main class="lock-wrapper">
+  </main>
 
-        <div class="lock-card">
-
-            <!-- photo -->
-            <div class="photo-frame">
-                <img src="img/jancy.jpg" alt="memory">
-                <div class="photo-caption">Our beginning</div>
-            </div>
-
-            <!-- password -->
-            <div class="password-box">
-                <input id="password" type="password" maxlength="6" readonly placeholder="••••">
-                <p class="hint">A date only we remember</p>
-            </div>
-
-            <!-- keypad -->
-            <div class="keypad">
-                <button class="num">1</button>
-                <button class="num">2</button>
-                <button class="num">3</button>
-
-                <button class="num">4</button>
-                <button class="num">5</button>
-                <button class="num">6</button>
-
-                <button class="num">7</button>
-                <button class="num">8</button>
-                <button class="num">9</button>
-
-                <button class="num zero">0</button>
-            </div>
-
-            <!-- actions -->
-            <div class="actions">
-                <button class="enter">Unlock Memories</button>
-                <button class="delete">⌫</button>
-            </div>
-
-        </div>
-
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
-
